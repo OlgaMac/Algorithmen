@@ -25,16 +25,13 @@ public class Task4 {
         }
         med = (max + min) / 2.0;
         min = 0;
-        double diff = 1000;
-        int result = 0;
-
-        while (j < numbers.length) {
-            double differencePartial = Math.abs(med - numbers[j] / 1.0);
-            if (differencePartial < diff) {
-                diff = differencePartial;
-                result = numbers[j];
+        double diff = Math.abs(med - numbers[0] / 1.0);;
+        int result = numbers[0];
+        for(int i = 1; i < numbers.length; i++){
+            if(Math.abs(med - numbers[i] / 1.0) < diff){
+                diff = Math.abs(med - numbers[i] / 1.0);
+                result = numbers[i];
             }
-            j++;
         }
         return result;
     }
