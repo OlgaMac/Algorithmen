@@ -24,7 +24,7 @@ public class Task4 {
             }
         }
         med = (max + min) / 2.0;
-        min = 0;
+        
         double diff = Math.abs(med - numbers[0] / 1.0);;
         int result = numbers[0];
         for(int i = 1; i < numbers.length; i++){
