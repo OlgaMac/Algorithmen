@@ -1,4 +1,4 @@
-package com.algorithmen.tasks;
+package com.algorithmen.tasks.day1;
 
 /**
  * Сдвинуть массив циклически на k-позиций влево;

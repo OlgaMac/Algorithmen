@@ -1,10 +1,10 @@
-package com.algorithmen.tasks;
+package com.algorithmen.tasks.day1;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.junit.jupiter.MockitoExtension;
 
-import static com.algorithmen.tasks.Task4.minDiff;
+import static com.algorithmen.tasks.day1.Task4.minDiff;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @ExtendWith(MockitoExtension.class)

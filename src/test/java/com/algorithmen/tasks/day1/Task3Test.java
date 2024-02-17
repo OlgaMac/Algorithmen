@@ -1,26 +1,32 @@
-package com.algorithmen.tasks;
+package com.algorithmen.tasks.day1;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.junit.jupiter.MockitoExtension;
 
-import static com.algorithmen.tasks.Task5.countOne;
+import static com.algorithmen.tasks.day1.Task3.revertNumber;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @ExtendWith(MockitoExtension.class)
-class Task5Test {
+class Task3Test {
     @Test
     void test1() {
-        assertEquals(3, countOne(560));
+        assertEquals(2001, revertNumber(1002));
     }
 
     @Test
     void test2() {
-        assertEquals(1, countOne(8));
+        assertEquals(1, revertNumber(1000));
     }
 
     @Test
     void test3() {
-        assertEquals(8, countOne(255));
+        assertEquals(9, revertNumber(9));
     }
+
+    @Test
+    void test4() {
+        assertEquals(52, revertNumber(25));
+    }
+
 }
