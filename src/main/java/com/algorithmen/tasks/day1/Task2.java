@@ -1,4 +1,4 @@
-package com.algorithmen.tasks;
+package com.algorithmen.tasks.day1;
 
 /**
  * Дан массив целых чисел. Требуется удалить из него все вхождения

@@ -1,4 +1,4 @@
-package com.algorithmen.tasks;
+package com.algorithmen.tasks.day1;
 
 /**
  * Даны три числа a,b,c. Требуется найти среди них медиану (серединное

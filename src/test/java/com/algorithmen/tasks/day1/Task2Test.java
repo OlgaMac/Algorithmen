@@ -1,4 +1,4 @@
-package com.algorithmen.tasks;
+package com.algorithmen.tasks.day1;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -6,7 +6,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.util.Arrays;
 
-import static com.algorithmen.tasks.Task2.moveNumber;
+import static com.algorithmen.tasks.day1.Task2.moveNumber;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @ExtendWith(MockitoExtension.class)

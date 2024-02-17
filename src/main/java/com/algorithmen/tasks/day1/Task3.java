@@ -1,4 +1,4 @@
-package com.algorithmen.tasks;
+package com.algorithmen.tasks.day1;
 
 /**
  * Дано неотрицательное число. Требуется перевернуть его;
