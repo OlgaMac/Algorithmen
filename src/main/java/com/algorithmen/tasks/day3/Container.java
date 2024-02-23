@@ -2,59 +2,43 @@ package com.algorithmen.tasks.day3;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 
 
 public class Container {
-
-    class Node {
-        private int num;
-        private List<Consumer<Container>> functions;
-
-        public Node(int num) {
-            this.num = num;
-            this.functions = new ArrayList<>();
-        }
-
-
-        @Override
-        public String toString() {
-            return "Node{" +
-                    "num=" + num +
-                    ", functions=" + functions +
-                    '}';
-        }
-    }
-
-    private List<Node> nods = new ArrayList<>();
-
+    private List<NumberCustom> numbers = new ArrayList<>();
+    private List<Operation> operations = new ArrayList<>();
+    int index = 0;
     //Добавляет элемент в контейнер
     public void push(int item) {
-        Node node = new Node(item);
-        node.functions.add(container -> container.push(item));
-        nods.add(node);
+        numbers.add(new NumberCustom(item, index));
+        index++;
     }
 
     // Добавляет ко всем элементам контейнера значение value
     public void add(int value) {
-        for (Node node : nods) {
-            node.num = node.num + value;
-            node.functions.add(container -> container.add(value));
-        }
+        operations.add(new Operation("+", value, index));
+        index++;
     }
 
     // Умножает все элементы
     public void mult(int value) {
-        for (Node node : nods) {
-            node.num = node.num * value;
-            node.functions.add(container -> container.mult(value));
-        }
+        operations.add(new Operation("*", value, index));
+        index++;
     }
 
-    public Node at(int index) {
-        Node node = nods.get(index);
-        node.functions.add(container -> container.at(index));
-        return node;
+    public int at(int index) {
+        NumberCustom number = numbers.get(index);
+        int result = number.getValue();
+        for (int i = 0; i < operations.size(); i++) {
+            if (operations.get(i).index > number.getIndex()) {
+                if (operations.get(i).op.equals("+")) {
+                    result = result + operations.get(i).value;
+                } else {
+                    result = result * operations.get(i).value;
+                }
+            }
+        }
+        return result;
 
     }
 
@@ -66,7 +50,7 @@ public class Container {
         container.add(3);
         container.mult(2);
         container.push(1);
-        System.out.println(container.nods.toString());
-        System.out.println(container.at(0));
+        container.mult(15);
+        System.out.println(container.at(2));
     }
 }
