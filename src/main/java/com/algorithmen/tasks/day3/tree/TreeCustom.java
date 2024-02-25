@@ -1,8 +1,8 @@
 package com.algorithmen.tasks.day3.tree;
 
-public class TreeCustom extends BinaryTreeCustom{
+public class TreeCustom {
+    private Node root;
     public TreeCustom() {
-        super();
     }
 
     public void insert(Comparable item) {
@@ -54,7 +54,7 @@ public class TreeCustom extends BinaryTreeCustom{
         return p;
     }
 
-    public BinaryTreeCustom swapSubtrees() {
+    public TreeCustom swapSubtrees() {
         doSwap(this.getRoot());
         return this;
     }
@@ -79,5 +79,16 @@ public class TreeCustom extends BinaryTreeCustom{
             System.out.print(t.getValue() + " ");
             doInorderTraversal(t.getRight());
         }
+    }
+    public void setRoot(Node newNode) {
+        this.root = newNode;
+    }
+
+    public Node getRoot() {
+        return this.root;
+    }
+
+    public boolean isEmpty() {
+        return (this.root == null);
     }
 }

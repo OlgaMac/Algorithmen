@@ -1,6 +1,6 @@
 package com.algorithmen.tasks.day3;
 
-import com.algorithmen.tasks.day2.BinaryTree;
+import com.algorithmen.tasks.day3.tree.TreeCustom;
 
 import java.util.List;
 
@@ -9,12 +9,12 @@ import java.util.List;
  */
 
 public class TaskDayThree2 {
-    static BinaryTree buildThree(List<Integer> array) {
+    static TreeCustom buildThree(List<Integer> array) {
 
-        BinaryTree binaryTree = new BinaryTree();
+        TreeCustom tree = new TreeCustom();
         for (int a = 0; a <= array.size(); a++) {
-            binaryTree.add(a);
+            tree.insert(a);
         }
-        return binaryTree;
+        return tree;
     }
 }
