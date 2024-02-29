@@ -9,10 +9,14 @@ public class TaskDayFore2 {
             return true;
         }
 
-        if (arr[i] >= arr[2 * i + 1]
+        if ((arr[i] >= arr[2 * i + 1]
                 && arr[i] >= arr[2 * i + 2]
                 && isHeap(arr, 2 * i + 1, n)
-                && isHeap(arr, 2 * i + 2, n)) {
+                && isHeap(arr, 2 * i + 2, n)) ||
+                (arr[i] < arr[2 * i + 1]
+                        && arr[i] < arr[2 * i + 2]
+                        && isHeap(arr, 2 * i + 1, n)
+                        && isHeap(arr, 2 * i + 2, n))) {
             return true;
         }
 
@@ -20,7 +24,7 @@ public class TaskDayFore2 {
     }
 
     public static void main(final String[] args) {
-        int[] arr = {5, 3, 6, 2, 1};
+        int[] arr = {1, 2, 3, 6, 8};
         int n = arr.length - 1;
 
         System.out.println(isHeap(arr, 0, n));
