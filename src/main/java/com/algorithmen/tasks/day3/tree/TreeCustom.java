@@ -4,7 +4,6 @@ public class TreeCustom {
     private Node root;
     public TreeCustom() {
     }
-
     public void insert(Comparable item) {
         if(this.getRoot() == null) {
             this.setRoot(new Node(item));
