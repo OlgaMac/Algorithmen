@@ -13,7 +13,7 @@ public class TaskDayThree2 {
 
         TreeCustom tree = new TreeCustom();
         for (int a = 0; a <= array.size(); a++) {
-            tree.insert(a);
+            tree.insert(array.get(a));
         }
         return tree;
     }
