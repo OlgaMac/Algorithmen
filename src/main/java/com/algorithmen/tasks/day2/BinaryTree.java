@@ -1,5 +1,7 @@
 package com.algorithmen.tasks.day2;
 
+import com.algorithmen.tasks.day3.tree.Node;
+
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -18,10 +20,10 @@ public class BinaryTree {
             return new Node(value);
         }
 
-        if (value < current.root) {
-            current.left = addRecursive(current.left, value);
-        } else if (value > current.root) {
-            current.right = addRecursive(current.right, value);
+        if ( current.getValue().compareTo(value) == 1) {
+            current.setLeft(addRecursive(current.getLeft(), value));
+        } else if (current.getValue().compareTo(value) != 1) {
+            current.setRight(addRecursive(current.getRight(), value));
         } else {
             // value already exists
             return current;
@@ -43,9 +45,9 @@ public class BinaryTree {
     {
         if (tn!=null)
         {
-            System.out.print(" " + tn.root);
-            depthTraversal(tn.left);
-            depthTraversal(tn.right);
+            System.out.print(" " + tn.getValue());
+            depthTraversal(tn.getLeft());
+            depthTraversal(tn.getRight());
         }
     }
 
@@ -61,27 +63,23 @@ public class BinaryTree {
 
             Node node = nodes.remove();
 
-            System.out.print(" " + node.root);
+            System.out.print(" " + node.getValue());
 
-            if (node.left != null) {
-                nodes.add(node.left);
+            if (node.getLeft() != null) {
+                nodes.add(node.getLeft());
             }
 
-            if (node.right != null) {
-                nodes.add(node.right);
+            if (node.getRight() != null) {
+                nodes.add(node.getRight());
             }
         }
     }
 
-    public static class Node {
-        private int root;
-        private Node left;
-        private Node right;
+    public Node getRoot() {
+        return root;
+    }
 
-        public Node(int rootData) {
-            root = rootData;
-            left = null;
-            right = null;
-        }
+    public void setRoot(Node root) {
+        this.root = root;
     }
 }
