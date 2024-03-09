@@ -4,8 +4,6 @@ import com.algorithmen.tasks.day2.BinaryTree;
 import com.algorithmen.tasks.day3.tree.Node;
 import com.algorithmen.tasks.day3.tree.TreeCustom;
 
-import static com.algorithmen.tasks.day3.tree.BTreePrinter.printNode;
-
 /**
  * Написать проверку является ли дерево бинарным деревом поиска;
  */
